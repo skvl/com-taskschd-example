@@ -1,2 +1,3 @@
-project('tutorial', 'cpp')
-executable('demo', 'main.cpp')
+project('COM_example', 'cpp')
+executable('app', 'main.cpp')
+extra_args = ['/link taskschd.lib comsupp.lib']

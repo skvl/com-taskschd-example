@@ -22,6 +22,17 @@
             ],
             "group": "build",
             "problemMatcher": []
+        },
+        {
+            "label": "re-configure",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "--reconfigure",
+                "builddir"
+            ],
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }
