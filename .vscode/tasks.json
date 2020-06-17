@@ -7,6 +7,7 @@
             "label": "build",
             "type": "shell",
             "command": "ninja",
+            "args": [ "-v" ],
             "options": {
                 "cwd": "${workspaceFolder}/builddir"
             },
@@ -14,21 +15,50 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "configure",
+            "label": "configure | debug",
             "type": "shell",
             "command": "meson",
             "args": [
+                "--buildtype=debug",
+                "-Db_vscrt=mtd",
                 "builddir"
             ],
             "group": "build",
             "problemMatcher": []
         },
         {
-            "label": "re-configure",
+            "label": "configure | release",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "--buildtype=release",
+                "-Db_vscrt=mt",
+                "builddir"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "re-configure | debug",
             "type": "shell",
             "command": "meson",
             "args": [
                 "--reconfigure",
+                "--buildtype=debug",
+                "-Db_vscrt=mtd",
+                "builddir"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "re-configure | release",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "--reconfigure",
+                "--buildtype=release",
+                "-Db_vscrt=mt",
                 "builddir"
             ],
             "group": "build",
